@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A & S Invitation</title>
-<style>
-html,body{
-  margin:0;
-  padding:0;
-  background:#f8f4ee;
-}
-img{
-  width:100%;
-  display:block;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A & S Invitation</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #f8f4ee;
+    }
+
+    img, video {
+      width: 100%;
+      display: block;
+    }
+
+    #video {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
-<a href="https://canva.link/tcrx98lxpm2xtjg">
-  <img src="Closed. JPG.jpg" alt="Tap to open invitation">
-</a>
+  <img id="closed" src="Closed.JPG.jpg" alt="Closed Invitation">
+
+  <video id="video" controls playsinline>
+    <source src="invite.mp4" type="video/mp4">
+  </video>
+
+  <script>
+    document.getElementById("closed").onclick = function () {
+      document.getElementById("closed").style.display = "none";
+      const vid = document.getElementById("video");
+      vid.style.display = "block";
+      vid.play();
+    };
+  </script>
 
 </body>
 </html>
