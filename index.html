@@ -9,7 +9,7 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: #fff;
+      background: white;
     }
 
     #closed,
@@ -26,22 +26,21 @@
 
 <body>
 
-  <img id="closed" src="closed.jpg.PNG" alt="Closed Invitation">
+  <img id="closed" src="closed.jpg.PNG" alt="Invitation">
 
   <video id="video" controls playsinline>
     <source src="invite.mp4.MP4" type="video/mp4">
-    Your browser does not support the video tag.
   </video>
 
   <script>
     const closed = document.getElementById("closed");
     const video = document.getElementById("video");
 
-    closed.addEventListener("click", () => {
+    closed.onclick = function () {
       closed.style.display = "none";
       video.style.display = "block";
       video.play();
-    });
+    };
   </script>
 
 </body>
