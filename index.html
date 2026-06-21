@@ -1,42 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A & S Invitation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A & S Invitation</title>
 
-  <style>
-    body {
-      margin: 0;
-      background: #f8f4ee;
-    }
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
 
-    img, video {
-      width: 100%;
-      display: block;
-    }
+#closed, #video {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
 
-    #video {
-      display: none;
-    }
-  </style>
+#video {
+  display: none;
+}
+</style>
 </head>
+
 <body>
 
-  <img id="closed" src="closed.jpg" alt="Closed Invitation">
+<img id="closed" src="closed.jpg" alt="Closed Invitation">
 
-  <video id="video" controls playsinline>
-    <source src="invite.mp4" type="video/mp4">
-  </video>
+<video id="video" controls autoplay playsinline>
+  <source src="invite.mp4" type="video/mp4">
+</video>
 
-  <script>
-    document.getElementById("closed").onclick = function () {
-      document.getElementById("closed").style.display = "none";
-      const vid = document.getElementById("video");
-      vid.style.display = "block";
-      vid.play();
-    };
-  </script>
+<script>
+document.getElementById("closed").addEventListener("click", function () {
+  this.style.display = "none";
+  const video = document.getElementById("video");
+  video.style.display = "block";
+  video.play();
+});
+</script>
 
 </body>
 </html>
