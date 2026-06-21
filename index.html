@@ -13,11 +13,13 @@
     }
 
     #closed,
+    #opened,
     #video {
       width: 100%;
       display: block;
     }
 
+    #opened,
     #video {
       display: none;
     }
@@ -28,6 +30,8 @@
 
   <img id="closed" src="closed.jpg" alt="Closed Invitation">
 
+  <img id="opened" src="opened.png" alt="Opened Invitation">
+
   <video id="video" controls playsinline>
     <source src="invite.mp4.MP4" type="video/mp4">
     Your browser does not support the video tag.
@@ -35,12 +39,17 @@
 
   <script>
     const closed = document.getElementById("closed");
+    const opened = document.getElementById("opened");
     const video = document.getElementById("video");
 
     closed.addEventListener("click", () => {
       closed.style.display = "none";
+      opened.style.display = "block";
+    });
+
+    opened.addEventListener("click", () => {
+      opened.style.display = "none";
       video.style.display = "block";
-      video.load();
       video.play();
     });
   </script>
