@@ -1,52 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A & S Invitation</title>
+<title>🤍 YOU’RE INVITED TO OUR NIKKAH 🤍</title>
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #fff;
-    }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    #closed,
-    #video {
-      width: 100%;
-      display: block;
-    }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    #video {
-      display: none;
-    }
+body {
+    background: black;
+    overflow: hidden;
+    height: 100vh;
+}
 
-    #closed {
-      cursor: pointer;
-    }
-  </style>
+#cover, #videoContainer {
+    width: 100%;
+    height: 100vh;
+}
+
+#cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#videoContainer {
+    display: none;
+}
+
+video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+</style>
+
 </head>
 
 <body>
 
-  <img id="closed" src="closed.PNG" alt="Closed Invitation">
+<div id="cover" onclick="openInvite()">
+    <img src="closed.PNG" alt="Open Invitation">
+</div>
 
-  <video id="video" controls playsinline>
-    <source src="invite.mp4.MP4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+<div id="videoContainer">
+    <video id="inviteVideo" controls playsinline>
+        <source src="invite.MP4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
 
-  <script>
-    const closed = document.getElementById("closed");
-    const video = document.getElementById("video");
 
-    closed.addEventListener("click", function () {
-      closed.style.display = "none";
-      video.style.display = "block";
-      video.play();
-    });
-  </script>
+<script>
+function openInvite() {
+
+    document.getElementById("cover").style.display = "none";
+
+    document.getElementById("videoContainer").style.display = "block";
+
+    document.getElementById("inviteVideo").play();
+}
+</script>
+
 
 </body>
 </html>
