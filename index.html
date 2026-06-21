@@ -15,7 +15,6 @@ html, body {
 #closed, #video {
   width: 100%;
   display: block;
-  cursor: pointer;
 }
 
 #video {
@@ -28,16 +27,17 @@ html, body {
 
 <img id="closed" src="closed.jpg" alt="Closed Invitation">
 
-<video id="video" controls autoplay playsinline muted>
-<source src="invite.mp4.MP4" type="video/mp4">
+<video id="video" controls playsinline>
+  <source src="invite.mp4.MP4" type="video/mp4">
 </video>
 
 <script>
-document.getElementById("closed").addEventListener("click", function () {
-  this.style.display = "none";
-  const video = document.getElementById("video");
+const closed = document.getElementById("closed");
+const video = document.getElementById("video");
+
+closed.addEventListener("click", () => {
+  closed.style.display = "none";
   video.style.display = "block";
-  video.muted = false;
   video.play();
 });
 </script>
