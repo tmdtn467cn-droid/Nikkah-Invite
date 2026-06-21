@@ -9,7 +9,7 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: #ffffff;
+      background: #fff;
     }
 
     #closed,
@@ -30,7 +30,7 @@
 
   <img id="closed" src="closed.jpg" alt="Closed Invitation">
 
-  <img id="opened" src="opened.png" alt="Opened Invitation">
+  <img id="opened" src="opened.%20png.PNG" alt="Opened Invitation">
 
   <video id="video" controls playsinline>
     <source src="invite.mp4.MP4" type="video/mp4">
@@ -45,12 +45,12 @@
     closed.addEventListener("click", () => {
       closed.style.display = "none";
       opened.style.display = "block";
-    });
 
-    opened.addEventListener("click", () => {
-      opened.style.display = "none";
-      video.style.display = "block";
-      video.play();
+      setTimeout(() => {
+        opened.style.display = "none";
+        video.style.display = "block";
+        video.play();
+      }, 1500);
     });
   </script>
 
