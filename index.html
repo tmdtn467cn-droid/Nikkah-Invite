@@ -28,7 +28,7 @@ html, body {
 
 <img id="closed" src="closed.jpg" alt="Closed Invitation">
 
-<video id="video" controls autoplay playsinline>
+<video id="video" controls autoplay playsinline muted>
   <source src="invite.mp4" type="video/mp4">
 </video>
 
@@ -37,6 +37,7 @@ document.getElementById("closed").addEventListener("click", function () {
   this.style.display = "none";
   const video = document.getElementById("video");
   video.style.display = "block";
+  video.muted = false;
   video.play();
 });
 </script>
